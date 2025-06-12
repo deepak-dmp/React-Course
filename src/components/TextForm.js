@@ -7,6 +7,11 @@ export default function TextForm({heading="Enter Heading"}) {
     let newText = text.toUpperCase();
     setText(newText)
   }
+  const handleLoCLick = () =>{
+    // console.log("Upper case was clicked" + text)
+    let newText = text.toLowerCase();
+    setText(newText)
+  }
 
   const handleOnChange = (event) =>{
 
@@ -14,7 +19,7 @@ export default function TextForm({heading="Enter Heading"}) {
     setText(event.target.value)
   }
 
-  const [text,setText]=useState('Enter text here');
+  const [text,setText]=useState('');
 
   return (
     <>
@@ -23,7 +28,8 @@ export default function TextForm({heading="Enter Heading"}) {
      <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
       </div>
-      <button className="btn btn-primary" onClick={handleUpCLick}>Convert to upper case</button>
+      <button className="btn btn-primary mx-2" onClick={handleUpCLick}>Convert to upper case</button>
+      <button className="btn btn-primary mx-2" onClick={handleLoCLick}>Convert to lower case</button>
     </div>
 
     <div className="container my-3">
