@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 export default function Navbar({title="Set Title Here",
-    about="Set About"}) {
+    about="Set About",mode,toggleMode}) {
   return (
-    <nav className="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav className={`navbar bg-${mode} border-bottom border-body navbar-expand-lg bg-body-tertiary`} data-bs-theme={mode}>
   <div className="container-fluid">
     <a className="navbar-brand" href="/">{title}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,13 +15,13 @@ export default function Navbar({title="Set Title Here",
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">{about}</a>
+          <a className="nav-link active"  aria-current="page" href="/">{about}</a>
         </li>
       </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline- secondary" type="submit">Search</button>
-      </form>
+      <div className={`form-check form-switch form-check-reverse text-${mode==="light"?"dark":"light"}`}>
+        <input className="form-check-input" type="checkbox" onClick={toggleMode} id="switchCheckReverse" />
+        <label className="form-check-label" htmlFor="switchCheckReverse">Enable dark mode</label>
+      </div>
     </div>
   </div>
 </nav>
