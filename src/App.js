@@ -41,7 +41,7 @@ function App() {
    
    <div className="container my-3">
 
-    <TextForm mode={mode} heading="Enter your text to analyze below" />
+    <TextForm mode={mode} showAlert={showAlert} heading="Enter your text to analyze below" />
     {/* <About/> */}
    
    </div>

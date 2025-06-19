@@ -1,16 +1,18 @@
 import React,{useState} from 'react'
 
-export default function TextForm({heading="Enter Heading", mode}) {
+export default function TextForm({heading="Enter Heading", mode,showAlert}) {
 
   const handleUpCLick = () =>{
     // console.log("Upper case was clicked" + text)
     let newText = text.toUpperCase();
     setText(newText)
+    showAlert("Convertd to UpperCase","success")
   }
   const handleLoCLick = () =>{
     // console.log("Upper case was clicked" + text)
     let newText = text.toLowerCase();
     setText(newText)
+    showAlert("Convertd to LowerCase","success")
   }
 
   const handleOnChange = (event) =>{
@@ -23,6 +25,7 @@ export default function TextForm({heading="Enter Heading", mode}) {
 
     // console.log("OnChange")
     setText("")
+    showAlert("all text has been cleared","success")
   }
 
   const [text,setText]=useState('');

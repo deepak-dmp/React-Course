@@ -8,7 +8,7 @@ export default function Alert({alert}) {
   return (
     
       alert&&<div class={`alert alert-${alert.type} alert-dismissible fade show`} role="alert">
-        <strong>{capitalze(alert.type)}</strong>: {alert.msg}
+        <strong>{capitalze(alert.type)} :</strong> {alert.msg}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     
